@@ -2,9 +2,11 @@
 layout: default
 ---
 
+# The Calysteon Corner
+
 # JavaScript Deobfuscation
 
-[Part 1: 09bf01f8pWykA.js](./js/09bf01f8pWykA.md)
+[Part 1: An Introduction to JavaScript Deobfuscation](./js/overview.md)
 
 # CVE Analysis
 
