@@ -4,7 +4,7 @@ layout: default
 
 # JavaScript Deobfuscation
 
-[Part 1: 09bf01f8pWykA.js](darcula\09bf01f8pWykA.md).
+[Part 1: 09bf01f8pWykA.js](darcula\09bf01f8pWykA.md)
 
 # CVE Analysis
 
