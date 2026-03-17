@@ -13,9 +13,7 @@ title: "Observing Claude Opus 4.6 Converge on Browser Exploit Techniques"
 
 Last week, Anthropic published a [case study](https://red.anthropic.com/2026/exploit/) describing how Claude Opus 4.6 wrote a working exploit for CVE-2026-2796 in Firefox's SpiderMonkey engine. The blog walks through how the model decomposed the bug into classical exploit primitives and chained them into code execution against a stripped js shell. It's a landmark result - the first time Anthropic has observed a model writing a successful browser exploit with minimal hand-holding.
 
-I use Claude Opus 4.6 through Claude Code as my primary tool for vulnerability research. In the past year, I have found several CVEs and received multiple acknowledgements from Apple for my work: 
-
-### LLM-Assisted CVEs
+I use Claude Opus 4.6 through Claude Code as my primary tool for vulnerability research. In the past year, I have found several CVEs with LLM-assisted vulnerability research: 
 
 | CVE | Vendor | CWE | Reference | Writeup |
 |---|---|---|---|---|
@@ -32,22 +30,7 @@ I use Claude Opus 4.6 through Claude Code as my primary tool for vulnerability r
 | **CVE-2025-43353** | Apple | **CWE-787** (Out-of-Bounds Write / Heap Corruption) | [125110](https://support.apple.com/en-us/125110), [125111](https://support.apple.com/en-us/125111), [125112](https://support.apple.com/en-us/125112) | [True](https://calysteon.github.io/cve/CVE-2025-43353.html) |
 | **CVE-2025-53623** | Shopify | **CWE-78** (OS Command Injection) | — | — |
 
----
-
-### LLM-Assisted Acknowledgements
-| Vendor | Platform / Release | Component(s) | Reference |
-|---|---|---|---|
-| Apple | macOS Tahoe 26.2 | **FileVault** | [125886](https://support.apple.com/en-us/125886) | 
-| Apple | iOS / iPadOS 26 | **darwinOS**, **libc**, **libpthread**, **libxml2** | [125108](https://support.apple.com/en-us/125108) |
-| Apple | iOS / iPadOS 18.7 | **libpthread**, **libxml2** | [125109](https://support.apple.com/en-us/125109) |
-| Apple | macOS Tahoe 26 | **AMD**, **Core Bluetooth**, **CoreMedia** , **darwinOS**, **libc**, **libedit**, **libpthread**, **libxml2** | [125110](https://support.apple.com/en-us/125110) |
-| Apple | macOS Sequoia 15.7 | **libpthread**, **libxml2** | [125111](https://support.apple.com/en-us/125111) |
-| Apple | macOS Sonoma 14.8 | **libpthread**, **libxml2** | [125112](https://support.apple.com/en-us/125112) |
-| Apple | tvOS 26 | **darwinOS**, **libc**, **libpthread**, **libxml2** | [125114](https://support.apple.com/en-us/125114) |
-| Apple | visionOS 26 | **darwinOS** | [125115](https://support.apple.com/en-us/125115) |
-| Apple | watchOS 26 | **darwinOS**, **libc**, **libpthread**, **libxml2** | [125116](https://support.apple.com/en-us/125116) |
-
-Through that work, Claude appears to uniformly exploit vulnerabilities across web browser variants. In particular, I have found Claude to use similar techniques when building an exploit in WebAssembly.
+Through that work, I have found that Claude appears to uniformly employ the same exploitation techniques across web browser families. In particular, I have found Claude to use similar techniques when building a exploits through WebAssembly.
 
 When I read Anthropic's write-up, I recognized the exploit immediately. Not the vulnerability - completely different research, a completely different target. I recognized the *techniques*. The exploitation methodology that Claude produced autonomously for Anthropic's evaluation matched, almost step for step, the methodology that Claude had constructed in my own research.
 
