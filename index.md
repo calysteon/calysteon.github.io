@@ -11,12 +11,13 @@ layout: default
 ---
 
 # CVE List
-
 | CVE | Vendor | CWE | Reference | Writeup |
 |---|---|---|---|---|
-| **CVE-2026-27820** | Ruby | **CWE-122** (Heap-based Buffer Overflow) | [ruby-lang.org](https://www.ruby-lang.org/en/news/2026/03/05/buffer-overflow-zlib-cve-2026-27820/) | — |
-| **CVE-2026-20652** | Apple | **CWE-191** (Integer Underflow) | TBD | — |
-| **CVE-2025-43505** | Apple | **CWE-787** (Out-of-Bounds Write / Heap Corruption) | [125641](https://support.apple.com/en-us/125641) | — |
+| **CVE-2026-28890** | Apple | TBD | TBD | - | 
+| **CVE-2026-28857** | Apple | TBD | TBD | - | 
+| **CVE-2026-27820** | Ruby | **CWE-122** (Heap-based Buffer Overflow) | [ruby-lang.org](https://www.ruby-lang.org/en/news/2026/03/05/buffer-overflow-zlib-cve-2026-27820/) | - |
+| **CVE-2026-20652** | Apple | **CWE-191** (Integer Underflow) | [126354](https://support.apple.com/en-us/126354) | - |
+| **CVE-2025-43505** | Apple | **CWE-787** (Out-of-Bounds Write / Heap Corruption) | [125641](https://support.apple.com/en-us/125641) | - |
 | **CVE-2025-43504** | Apple | **CWE-121** (Stack-based Buffer Overflow) | [125641](https://support.apple.com/en-us/125641) | [True](https://objective-see.org/blog/blog_0x83.html) |
 | **CVE-2025-43375** | Apple | **CWE-20** (Improper Input Validation) | [125117](https://support.apple.com/en-us/125117) | — |
 | **CVE-2025-43370** | Apple | **CWE-20** (Improper Input Validation) | [125117](https://support.apple.com/en-us/125117) | — |
@@ -38,10 +39,9 @@ layout: default
 ---
 
 # Acknowledgements
-
 | Vendor | Platform / Release | Component(s) | Reference |
 |---|---|---|---|
-| Apple | macOS Tahoe 26.2 | **FileVault** | [125886](https://support.apple.com/en-us/125886) |
+| Apple | macOS Tahoe 26.2 | **FileVault** | [125886](https://support.apple.com/en-us/125886) | 
 | Apple | iOS / iPadOS 26 | **darwinOS**, **libc**, **libpthread**, **libxml2** | [125108](https://support.apple.com/en-us/125108) |
 | Apple | iOS / iPadOS 18.7 | **libpthread**, **libxml2** | [125109](https://support.apple.com/en-us/125109) |
 | Apple | macOS Tahoe 26 | **AMD**, **Core Bluetooth**, **CoreMedia** , **darwinOS**, **libc**, **libedit**, **libpthread**, **libxml2** | [125110](https://support.apple.com/en-us/125110) |

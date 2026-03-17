@@ -127,5 +127,3 @@ The name is intentional. In ROP, you orient around `ret` instructions. In AOP, y
 I don't think this is the last word on the subject. But I think the binary exploitation community has spent 20 years building intuition about composition attacks against safety boundaries, and that intuition is directly transferable to AI. We should use it.
 
 ---
-
-*Nathaniel Oh is a vulnerability researcher, PhD candidate in Computer & Cyber Sciences at Augusta University, and incoming Research Scientist on Anthropic's Frontier Red Team. He holds 135+ security certifications including OSEE, OSCE3, and OSCP, and has disclosed 20+ CVEs across Apple, Adobe, Shopify, Ruby, and WordPress. Contact: nathanieloh2@gmail.com*
