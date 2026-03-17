@@ -3,6 +3,8 @@ layout: default
 title: "Observing Claude Opus 4.6 Converge on Browser Exploit Techniques"
 ---
 
+[Home](../index.md)
+
 # Observing Claude Opus 4.6 Converge on Browser Exploit Techniques Across Independent Research
 
 *Nathaniel Oh - March 17, 2026*

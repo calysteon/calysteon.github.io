@@ -3,6 +3,8 @@ layout: default
 title: "Old Exploits, New Engines: How Claude Mapped a 2016 Exploitation Template onto Modern WebAssembly"
 ---
 
+[Home](../index.md)
+
 # Old Exploits, New Engines: How Claude Mapped a 2016 Exploitation Template onto Modern WebAssembly
 
 *Nathaniel Oh - March 17, 2026*

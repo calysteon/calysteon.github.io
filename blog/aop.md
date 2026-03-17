@@ -3,6 +3,8 @@ layout: default
 title: "Activation-Oriented Programming: Applying Binary Exploitation Intuition to AI Red Teaming"
 ---
 
+[Home](../index.md)
+
 # Activation-Oriented Programming: Applying Binary Exploitation Intuition to AI Red Teaming
 
 *Nathaniel Oh — March 6, 2026*
