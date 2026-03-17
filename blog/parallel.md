@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Same Playbook, Different Context: Observing Claude Opus 4.6 Converge on Identical Browser Exploit Techniques Across Independent Research"
+title: "Observing Claude Opus 4.6 Converge on Browser Exploit Techniques"
 ---
 
-# Same Playbook, Different Context: Observing Claude Opus 4.6 Converge on Identical Browser Exploit Techniques Across Independent Research
+# Observing Claude Opus 4.6 Converge on Browser Exploit Techniques Across Independent Research
 
 *Nathaniel Oh - March 17, 2026*
 
