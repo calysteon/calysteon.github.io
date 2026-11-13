@@ -10,11 +10,11 @@ layout: default
 
 **November 13, 2026** · Shaping Gap Benchmark
 
-**Updated: Checkpoint 05.** A learning-and-reuse cycle now runs on selected
-pretrained neural components without the original transformer graph. Explore
-the results, commercial implications, paper, code and dated article change log.
+**Updated: Checkpoint 06.** A second compatible neural improvement builds on the
+first over frozen pretrained components. Explore the complete controls, real
+forecast test, paper, code and dated article change log.
 
-[Read the article](/research/shaping-gap-sustainable-ai/) · [Paper and code](https://github.com/calysteon/shaping-gap-benchmark/tree/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle)
+[Read the article](/research/shaping-gap-sustainable-ai/) · [Paper and code](https://github.com/calysteon/shaping-gap-benchmark/tree/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces)
 
 ## Security research
 

@@ -1,17 +1,17 @@
 ---
 layout: research_post
 title: "Unlocking the Computation Inside Pretrained Models"
-subtitle: "From whole-model reuse to a learning runtime over pretrained neural components: results, commercial implications and the next research step."
-description: "Checkpoint 05 runs a learning-and-reuse cycle over pretrained neural components without the original transformer graph. Read the results, commercial implications, paper and reproducible code."
+subtitle: "A second compatible neural improvement: cumulative development over pretrained components, complete results and an application test."
+description: "Checkpoint 06 acquires a second compatible improvement over frozen pretrained components. Read the complete results, application test, paper and reproducible code."
 author: Nathaniel Oh
 date: 2026-11-13
-last_modified_at: 2026-11-13T21:33:41+00:00
+last_modified_at: 2026-11-13T23:03:10+00:00
 permalink: /research/shaping-gap-sustainable-ai/
 image:
-  path: https://calysteon.github.io/assets/images/shaping-gap-checkpoint05-social.png
+  path: https://calysteon.github.io/assets/images/shaping-gap-checkpoint06-social.png
   width: 1200
   height: 630
-  alt: "Checkpoint 05: learning from pretrained components without the original transformer graph. Paper and complete code public."
+  alt: "Checkpoint 06: a second compatible neural improvement. Six protected program instances retained; paper and complete evidence public."
 ---
 
 What if a pretrained model contains useful computation that its usual way of operating does not make accessible?
@@ -22,16 +22,54 @@ We normally encounter a language model through a familiar workflow: text enters,
 
 Think of lifting a heavy rock and discovering the activity underneath. The rock, in this analogy, is the assumption that a pretrained model must always be used through the interface it arrived with. Lifting that assumption lets us investigate what other computations can be constructed from the same trained substrate.
 
-With Dr. Paul Attie, I am pursuing this through [Shaping Gap Benchmark](https://github.com/calysteon/shaping-gap-benchmark). Checkpoint 04 demonstrated a learning-and-reuse cycle around a complete pretrained transformer body. **Checkpoint 05 now brings that cycle into a component runtime that executes no original transformer graph.** It acquires an execution change and a shared interface for existing programs, learns which pair to retain, and validates it on untouched inputs.
+With Dr. Paul Attie, I am pursuing this through [Shaping Gap Benchmark](https://github.com/calysteon/shaping-gap-benchmark). Checkpoint 04 demonstrated a learning-and-reuse cycle around a complete pretrained transformer body. Checkpoint 05 brought that cycle into a component runtime that executes no original transformer graph. **Checkpoint 06 now acquires a second neural improvement from that already improved runtime, while keeping earlier programs usable.**
 
 The larger objective is **capability growth through better organization of computation we already have**. If useful improvements can accumulate economically, some capability growth could become less tightly coupled to bigger pretrained models and expanding data-centre capacity.
 
 <div class="research-links">
-<a class="research-button" href="https://github.com/calysteon/shaping-gap-benchmark/tree/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle">Explore Checkpoint 05</a>
-<a class="research-button research-button-secondary" href="https://github.com/calysteon/shaping-gap-benchmark/blob/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle/paper/shaping-gap-benchmark-v.pdf">Read Paper V</a>
+<a class="research-button" href="https://github.com/calysteon/shaping-gap-benchmark/tree/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces">Explore Checkpoint 06</a>
+<a class="research-button research-button-secondary" href="https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/paper/shaping-gap-benchmark-vi.pdf">Read Paper VI</a>
 </div>
 
-## November 13 update: the learning cycle now runs on neural components
+## November 13 update: a second improvement that keeps earlier programs usable
+
+A first improvement asks whether a construction helps. A second asks whether the system can build on it without breaking what it already does.
+
+**We have now demonstrated that second step in one 0.6B-derived component runtime.** Starting from the accepted Checkpoint 05 construction, the system recruits one additional original pretrained component and learns a shared interface against its earlier programs' requirements. Experience selects the execution/interface pair; two untouched terminal streams then test the retained construction.
+
+| Nonlinear temporal-processing score | Already improved runtime | Second retained construction |
+|:--|--:|--:|
+| Terminal stream 1 | 1.38792 | **1.84921** |
+| Terminal stream 2 | 1.13904 | **1.70404** |
+
+Those gains are **33.24% and 49.60% on this finite processing measure**, with **6/6 protected program instances retained** across three frozen libraries. The feature-interface control also improves, by 20.52% and 27.61%; the interface-only control retains baseline. Each successful arm accepts one additional neural acquisition during five rounds. The stronger criterion of two additional acquisitions remains unmet.
+
+<figure>
+<img src="/assets/images/shaping-gap-checkpoint06.png" alt="Checkpoint 06 second retained processing gain with feature-interface control, plus full-cohort recruitment successes for 64, 128 and 512 candidates." width="2100" height="760" loading="lazy">
+<figcaption>The left panel starts from the already improved Checkpoint 05 runtime. These scores measure finite numerical processing, rather than language-answer accuracy. The right panel reports the earlier recruitment study, including baseline fallbacks.</figcaption>
+</figure>
+
+The engineering distinction is how the system protects earlier work. Coordinate alignment tries to preserve every observed feature. The new **program-contract interface** learns a shared observation map using the numerical functions that the unchanged programs must continue to compute. Source targets train this map; new inputs assess whether the acquired pair actually improves while respecting those obligations.
+
+Compatibility stays in **one 600-value map** as interfaces compose. The successful runtime retains **one recruited port** and 1,102,272 bytes of conservatively counted runtime/program arrays. The original pretrained weights remain fixed. Whole-process memory and the immutable component archive are separately reported; the active four-port cap is not yet full, so replacement has not been exercised.
+
+### Screening more components, with the work charged
+
+An initial study screened pools of 64, 128 and 512 candidates in fixed-size chunks. Fresh terminal gains occurred in 2, 3 and 4 of six inherited contexts. Random-128 and resident-bank controls each succeeded in three contexts. Larger inventories offered more opportunities but required more acquisition work; they did not produce a second gain on the already improved chain.
+
+That failure identified the next experiment: acquire the interface against existing program requirements while retaining the same regression guards. The program-contract study then produced the second gain on new streams. Both studies, including rejected candidates and failed criteria, are in [Paper VI](https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/paper/shaping-gap-benchmark-vi.pdf).
+
+### A real forecast test locates the next commercial hurdle
+
+We froze the resulting controllers and tested new readouts on a public chronological appliance-energy series. One-hour forecast RMSE fell from **83.1373 to 82.6682 Wh**, a **0.564% reduction**. The paired daily-block interval was 0.101–1.175%. Ten-minute error rose 2.220%; four-hour change was very small. A 64-lag ridge autoregression reference performed better at all three horizons.
+
+The application acceptance criterion was not met. This gives the next acquisition a concrete job: **improve the longer-horizon forecast while protecting the short-horizon consumer and competing with the classical reference**. The study uses univariate consumption from one house; complete predictions, classical controls, preprocessing and the public dataset attribution are released.
+
+The new foundation is a two-improvement chain with compatibility and full candidate accounting. Commercial impact now depends on turning that mechanism into competitive application quality and amortized lifecycle savings. The numerical recruitment, contract-acquisition and transfer studies took approximately 175, 49 and 5 seconds respectively in the recorded CPU environment; these are full-study times, not production request latencies. Pool extraction and peak memory are separately recorded in the [cost ledger](https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/results/cost-ledger.json).
+
+Independent replay checks 12,112 temporal score vectors, 300 acquired maps, 8,320 native response points and every application prediction. Fresh portable acquisition and forecasting reproduce the reported outcomes exactly. [Explore the complete checkpoint](https://github.com/calysteon/shaping-gap-benchmark/tree/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces).
+
+## Checkpoint 05: the learning cycle runs on neural components
 
 The latest experiment uses **24 selected pretrained neural fragments per context** as its computational substrate. A new recurrent runtime connects them directly. It executes their native numerical functions without invoking transformer blocks, attention, tokenization or a language-generation head.
 
@@ -55,7 +93,7 @@ The controls help locate the contribution. First-order guidance produces two str
 
 The [checkpoint package](https://github.com/calysteon/shaping-gap-benchmark/tree/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle) includes extracted component banks, executable code, every experimental condition and an independent replay of 1,440 score vectors. It runs on a CPU without downloading the full source language models. Numerical materialization differences from the original mixed-precision components, preparation work and resource costs are documented alongside the results.
 
-This brings the training-scaffold idea into an executable experiment: selected functions acquired during transformer pretraining can participate in a different computation, and that computation can undergo a measured learning-and-retention cycle. The next step is another acquisition from the accepted component runtime, extending what it can do while preserving the first improvement.
+This brings the training-scaffold idea into an executable experiment: selected functions acquired during transformer pretraining can participate in a different computation, and that computation can undergo a measured learning-and-retention cycle. Checkpoint 06, above, takes the next acquisition from that accepted runtime and measures preservation of earlier work.
 
 ## Checkpoint 04: separating computation from language generation
 
@@ -117,7 +155,7 @@ That could create three kinds of value:
 
 The product direction would be a capability-development runtime for organizations that control their neural deployments: an engine that discovers candidate constructions, evaluates their gains and compatibility, and maintains accepted improvements. Commercial viability would depend on the resulting workload economics, reliability and maintenance effort.
 
-A direct application study would be industrial time-series monitoring: acquire detection of a new operating or fault pattern while keeping existing detectors and forecasts usable. That connects our numerical recurrent mechanism to a concrete operational outcome.
+Checkpoint 06 supplies an initial chronological energy-forecast transfer test. The next application-directed acquisition can improve one forecast horizon while protecting another, then measure whether the resulting quality and lifecycle economics justify deployment.
 
 ## The sustainability opportunity
 
@@ -127,7 +165,7 @@ Our long-term objective is **capability growth through acquired organization ove
 
 That would provide another lever for sustainable AI: extend the useful work delivered by existing hardware, reuse the investment embodied in pretraining, and reduce the upgrade pressure that can accompany new capability demands.
 
-The environmental claim has to be measured over the lifecycle. Unchanged model weights are not an electricity measurement. Discovery, unsuccessful trials, validation, extra execution, storage and maintenance all consume resources. Checkpoint 04 records **1,852,268 new two-position native sequences**, including independent verification, with historical acquisition and an additional 7,680 publication-validation sequences recorded separately. Electrical energy has not been measured in either checkpoint. The complete [Checkpoint 05 ledger](https://github.com/calysteon/shaping-gap-benchmark/blob/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle/results/cost-ledger.json) separately records its component execution, preparation and validation work. Measured lifetime energy is the next sustainability criterion.
+The environmental claim has to be measured over the lifecycle. Unchanged model weights are not an electricity measurement. Discovery, unsuccessful trials, validation, extra execution, storage and maintenance all consume resources. Checkpoint 04 records **1,852,268 new two-position native sequences**, including independent verification, with historical acquisition and an additional 7,680 publication-validation sequences recorded separately. Electrical energy has not been measured in these studies. The complete [Checkpoint 05 ledger](https://github.com/calysteon/shaping-gap-benchmark/blob/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle/results/cost-ledger.json) separately records its component execution, preparation and validation work. The [Checkpoint 06 ledger](https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/results/cost-ledger.json) adds recruitment, interface acquisition, failed trials and application transfer. Measured lifetime energy remains the sustainability criterion.
 
 The commercial and sustainability target is therefore precise: **lower lifetime cost and energy per retained useful capability**, at the required quality and regression limits. Deployment volume matters too; a lower cost per capability does not by itself determine the total footprint as usage expands.
 
@@ -137,18 +175,21 @@ That is a compelling hypothesis to test: a smaller pretrained body with an acqui
 
 The current result establishes improvement relative to the same frozen substrate under the benchmark's baseline runtime. The smaller-versus-larger question calls for its own comparison: matched tasks and quality criteria, with acquisition work, inference work, memory and energy accounted for on both sides.
 
-The next research step toward cumulative growth is to start from the accepted component runtime, acquire a second improvement, and test whether it preserves the first. Shared compatibility maps can be composed into a fixed-size map; the experiment must charge the work of acquisition, rejection and maintenance as that process continues.
+Checkpoint 06 establishes a second compatible neural gain and keeps shared compatibility in a fixed-size map. The next cumulative threshold is repeated successful acquisition beyond that second gain, including replacement when the active bank fills, with discovery, rejected trials and maintenance charged throughout.
 
-For commercial evidence, I would then test a sequence of useful upgrades on a real workload, measuring task quality, old-program retention, peak memory, latency, energy and total acquisition cost against replacement and adaptation alternatives.
+For stronger commercial evidence, the next acquisition must target the real workload directly, improve competitive task quality, and preserve established consumers. Peak memory, latency, energy and total acquisition cost then determine whether useful upgrades pay back against replacement and adaptation alternatives.
 
 This is where the larger opportunity lives: **an AI installation whose useful capabilities can develop through experience, with retained improvements that make later development more valuable.** The model we trained becomes a substrate for further invention through execution.
 
-The research question is whether that process can repeatedly increase what installed computation can do, while keeping the resource budget and existing obligations explicit. The public benchmark now gives us working first cycles at both whole-body and component levels, with the evidence needed to pursue repeated development.
+The research question is whether that process can repeatedly increase what installed computation can do, while keeping the resource budget and existing obligations explicit. The public benchmark now includes first cycles at whole-body and component levels, a second compatible component acquisition, and an application test that defines the next quality and regression contracts.
 
 If you operate a neural workload with expensive upgrades, established downstream consumers and measurable acceptance criteria, I would be interested in exploring that next experiment together.
 
 ## Inspect the work
 
+- [Checkpoint 06: complete code, data and reproduction](https://github.com/calysteon/shaping-gap-benchmark/tree/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces)
+- [Paper VI: A Second Compatible Neural Acquisition Through Program-Contract Interfaces](https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/paper/shaping-gap-benchmark-vi.pdf)
+- [Checkpoint 06: complete findings and controls](https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/results/FINDINGS.txt)
 - [Checkpoint 05: component runtime, complete data and reproduction](https://github.com/calysteon/shaping-gap-benchmark/tree/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle)
 - [Paper V: Learned Component Execution Beyond the Transformer Graph](https://github.com/calysteon/shaping-gap-benchmark/blob/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle/paper/shaping-gap-benchmark-v.pdf)
 - [Checkpoint 05: all results and controls](https://github.com/calysteon/shaping-gap-benchmark/blob/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle/results/FINDINGS.txt)
@@ -161,6 +202,15 @@ If you operate a neural workload with expensive upgrades, established downstream
 *Research by Nathaniel Oh and Paul Attie. This post describes a research result and a commercial development hypothesis; the linked artifacts provide the precise experimental scope.*
 
 ## Change log
+
+### November 13, 2026 — Checkpoint 06
+
+- Added the second compatible neural acquisition, program-contract interface and matched controls.
+- Included bounded recruitment scaling, the failed cumulative baseline, complete lifecycle accounting and independent/fresh reproduction.
+- Added chronological energy-forecast transfer, its short-horizon regression and stronger classical reference; identified application-directed acquisition as the next threshold.
+- Updated the latest paper/code links, homepage excerpt and social preview; preserved earlier checkpoint evidence.
+- Research version: [Checkpoint 06 publication](https://github.com/calysteon/shaping-gap-benchmark/commit/734af7274a691fdffc3fe4ffe41c2b433d352f52).
+
 
 ### November 13, 2026 — Checkpoint 05
 
