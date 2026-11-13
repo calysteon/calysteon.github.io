@@ -3,3 +3,6 @@ description: A Guide to the Cyber Galaxy
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-slate
+
+url: "https://calysteon.github.io"
+baseurl: ""

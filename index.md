@@ -4,6 +4,21 @@ layout: default
 
 # Blog
 
+## Research
+
+### [Unlocking the Computation Inside Pretrained Models](/research/shaping-gap-sustainable-ai/)
+
+**November 13, 2026** · Shaping Gap Benchmark
+
+What becomes possible when pretrained neural computation gets a different
+execution system? Explore acquired execution over frozen weights, compatibility
+for existing programs, and the commercial research path toward more sustainable AI.
+Includes measured results, the paper and reproducible code.
+
+[Read the article](/research/shaping-gap-sustainable-ai/) · [Paper and code](https://github.com/calysteon/shaping-gap-benchmark/tree/main/checkpoints/04-experience-acquired-reuse)
+
+## Security research
+
 | Description | Post | Did I Report This? |
 |---|---|---|
 | Windows NTFS integer underflow enabling kernel privilege escalation (reverse-engineering writeup) | [CVE-2021-31956](cve/CVE-2021-31956.md) | No |
