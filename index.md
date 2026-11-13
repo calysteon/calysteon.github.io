@@ -10,12 +10,11 @@ layout: default
 
 **November 13, 2026** · Shaping Gap Benchmark
 
-What becomes possible when pretrained neural computation gets a different
-execution system? Explore acquired execution over frozen weights, compatibility
-for existing programs, and the commercial research path toward more sustainable AI.
-Includes measured results, the paper and reproducible code.
+**Updated: Checkpoint 05.** A learning-and-reuse cycle now runs on selected
+pretrained neural components without the original transformer graph. Explore
+the results, commercial implications, paper, code and dated article change log.
 
-[Read the article](/research/shaping-gap-sustainable-ai/) · [Paper and code](https://github.com/calysteon/shaping-gap-benchmark/tree/main/checkpoints/04-experience-acquired-reuse)
+[Read the article](/research/shaping-gap-sustainable-ai/) · [Paper and code](https://github.com/calysteon/shaping-gap-benchmark/tree/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle)
 
 ## Security research
 
