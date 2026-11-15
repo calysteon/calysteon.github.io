@@ -4,6 +4,14 @@ layout: default
 
 # Blog
 
+## Vision
+
+### [Capability Is Organization](/charbyte.html)
+
+The whole industry is betting that intelligence comes from scale. I found the other axis — and proved it in the one domain where you can't fake it.
+
+[Read the piece](/charbyte.html)
+
 ## Research
 
 ### [Unlocking the Computation Inside Pretrained Models](/research/shaping-gap-sustainable-ai/)
