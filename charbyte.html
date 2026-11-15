@@ -36,6 +36,8 @@
   article p:first-of-type{margin-top:0}
   article strong{font-weight:600;color:var(--ink)}
   article em{font-style:italic}
+  article a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(138,31,45,.3)}
+  article a:hover{border-bottom-color:var(--accent)}
   .thesis{color:var(--ink)}
 
   .divider{text-align:center;color:var(--rule);letter-spacing:1em;margin:40px 0 36px;font-size:14px;user-select:none}
@@ -74,15 +76,15 @@
 
     <div class="divider">· · ·</div>
 
-    <p>The same method applies to more than finding vulnerabilities. It is <strong>one engine, and it serves three markets.</strong></p>
+    <p>The method is not limited to finding vulnerabilities. The same capability applies to three different kinds of work.</p>
 
-    <p><strong>Find the bug.</strong> Locate and prove vulnerabilities across an entire system, without fuzzing.</p>
+    <p>The first is <strong>finding vulnerabilities</strong>: locating and proving them across an entire system, without fuzzing. The 67+ findings range across kernel memory corruption, browser information disclosure, and privilege escalation. The method also works backward: from a single public crash report, it can reconstruct a working proof-of-concept that reproduces the fault.</p>
 
-    <p><strong>Find the malware.</strong> Determine what obfuscated code does without running it and without de-obfuscating it, because its structure stays visible even when its surface does not.</p>
+    <p>The second is <strong>analyzing malware</strong>, through an approach I call <strong>neural sandboxing</strong>. Instead of executing a file to see what it does, the method runs it through a neural network that emulates its behavior, and reads the network's internal activity to recover the file's real function. A conventional sandbox can be fooled by malware that notices it is being watched and stays quiet; a static signature breaks the moment the code is obfuscated. Neural sandboxing avoids both, because the code is never run and its structure stays legible even when its surface is scrambled. The approach is patent-pending.</p>
 
-    <p><strong>Harness the computation.</strong> Add capability to a frozen model and run it on commodity, on-device hardware, for work that used to require a frontier model.</p>
+    <p>The third is <strong>extending a model's capability</strong>: adding new capability to a frozen model and running it on commodity, on-device hardware, for work that used to require a frontier model. In a <a href="/research/shaping-gap-sustainable-ai/">public benchmark</a>, this improved a frozen 0.6-billion-parameter model by 33% and 49% on two held-out tasks, with no change to its weights and every existing program kept working. The result reproduces from the released code.</p>
 
-    <p>These are not three products. They are one method applied to three problems, and progress on any one of them improves the method for the others.</p>
+    <p>These are not three separate products. They are one method applied to three problems, and progress on any one of them improves the method for the others.</p>
 
     <p>The advantage is in the acquired description, not in the model. It is model-agnostic: when a better model ships, it becomes a better substrate for the same method, at no additional training cost. The descriptions accumulate and carry forward, and they improve as the models improve.</p>
 
@@ -92,7 +94,7 @@
 
     <p>If this holds, capability no longer requires a larger model or a larger data center. Security moves from asserted to proven. And models can be made reliable enough for the high-stakes domains that currently exclude them, because the same discipline that makes a vulnerability undeniable makes a clean result trustworthy.</p>
 
-    <p>I did not reason my way to this. I built it to do real work under conditions I could not fake, and it held everywhere else I applied it. <strong>This is the engine I am building.</strong>&nbsp;<span class="endmark">&#9632;</span></p>
+    <p>I did not reason my way to this. I built it to do real work under conditions I could not fake, and it held everywhere else I applied it. <strong>This is what I am building.</strong>&nbsp;<span class="endmark">&#9632;</span></p>
   </article>
 
   <footer>
