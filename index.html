@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charbyte — One engine, three markets</title>
+<meta name="description" content="An orthogonal axis to the AI economy: capability from organization, not scale — proven in the one domain where you can't fake it. One engine, three markets: find the bug, find the malware, harness the computation.">
+<meta property="og:title" content="Charbyte — One engine, three markets">
+<meta property="og:description" content="Capability from organization, not scale. Proven in the one domain where you can't fake it.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#08080b; --bg2:#0d0d12; --panel:#101016; --line:rgba(255,255,255,.08);
+    --line2:rgba(255,255,255,.14); --ink:#ecedf1; --mut:#9a9aa6; --mut2:#6f6f7d;
+    --acc:#8ab4ff; --acc2:#a78bfa; --warm:#f6c177;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;
+    background-image:
+      radial-gradient(900px 500px at 50% -10%, rgba(138,180,255,.10), transparent 60%),
+      radial-gradient(700px 500px at 90% 10%, rgba(167,139,250,.07), transparent 55%);
+    background-repeat:no-repeat;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono)}
+  .grad{background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+    background:rgba(8,8,11,.6);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-family:var(--mono);font-weight:600;letter-spacing:.16em;font-size:14px}
+  .brand b{color:var(--acc)}
+  .navlinks{display:flex;gap:26px;font-size:13.5px;color:var(--mut)}
+  .navlinks a:hover{color:var(--ink)}
+  @media(max-width:620px){.navlinks{display:none}}
+
+  /* hero */
+  .hero{padding:88px 0 64px}
+  .hero h1{font-size:clamp(34px,6vw,62px);line-height:1.04;letter-spacing:-.03em;margin:18px 0 0;font-weight:650}
+  .hero p.lede{font-size:clamp(17px,2.4vw,21px);color:var(--mut);max-width:720px;margin:26px 0 0}
+  .cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-size:14.5px;font-weight:550;border:1px solid var(--line2);transition:.18s}
+  .btn.primary{background:linear-gradient(100deg,var(--acc),var(--acc2));color:#0a0a12;border-color:transparent}
+  .btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn.ghost:hover{border-color:var(--ink);color:#fff}
+
+  /* section scaffolding */
+  section{padding:66px 0;border-top:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut2);margin-bottom:18px}
+  h2{font-size:clamp(26px,3.6vw,38px);line-height:1.1;letter-spacing:-.025em;margin:0 0 10px;font-weight:620}
+  .sub{color:var(--mut);max-width:680px;font-size:16.5px}
+
+  /* inversion */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+  @media(max-width:720px){.split{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .card .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2)}
+  .card h3{margin:12px 0 8px;font-size:22px;letter-spacing:-.02em}
+  .card.them h3{color:var(--mut)}
+  .card.us{border-color:rgba(138,180,255,.28);box-shadow:0 0 0 1px rgba(138,180,255,.06),0 24px 60px -30px rgba(138,180,255,.25)}
+  .card p{margin:0;color:var(--mut);font-size:15.5px}
+  .oneliner{margin-top:28px;font-size:clamp(19px,2.6vw,25px);letter-spacing:-.02em;font-weight:560}
+
+  /* three markets */
+  .markets{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  @media(max-width:820px){.markets{grid-template-columns:1fr}}
+  .mk{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.2s;position:relative;overflow:hidden}
+  .mk:hover{border-color:var(--line2);transform:translateY(-3px)}
+  .mk::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--acc),var(--acc2));opacity:.0;transition:.2s}
+  .mk:hover::before{opacity:.9}
+  .mk .n{font-family:var(--mono);font-size:12px;color:var(--acc);letter-spacing:.14em}
+  .mk h3{margin:14px 0 10px;font-size:21px;letter-spacing:-.02em}
+  .mk p{margin:0;color:var(--mut);font-size:15px}
+  .mk .dom{margin-top:16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut2)}
+  .engine-note{margin-top:26px;color:var(--mut);max-width:720px;font-size:16px}
+  .engine-note b{color:var(--ink);font-weight:600}
+
+  /* proof */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  @media(max-width:720px){.stats{grid-template-columns:1fr}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .stat .big{font-size:32px;font-weight:640;letter-spacing:-.02em}
+  .stat .big.accent{color:var(--acc)}
+  .stat .lbl{color:var(--mut);font-size:14.5px;margin-top:4px}
+  .prooflinks{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;font-size:14.5px}
+  .prooflinks a{color:var(--acc);border-bottom:1px solid rgba(138,180,255,.3);padding-bottom:1px}
+  .prooflinks a:hover{color:#fff;border-color:#fff}
+
+  /* mechanism */
+  .mech{background:linear-gradient(180deg,var(--bg2),var(--bg));border:1px solid var(--line);border-radius:20px;padding:34px;margin-top:30px}
+  .mech p{font-size:17px;color:#cfd0d8;max-width:760px}
+  .mech .lead{font-size:clamp(20px,2.6vw,26px);color:var(--ink);letter-spacing:-.02em;font-weight:560;margin:0 0 16px}
+
+  /* horizon */
+  .hz{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:30px}
+  @media(max-width:820px){.hz{grid-template-columns:1fr}}
+  .hz .item{padding:22px 0}
+  .hz .item .h{font-size:17px;font-weight:600;margin-bottom:6px}
+  .hz .item p{margin:0;color:var(--mut);font-size:15px}
+
+  /* contact */
+  .contact{text-align:center;padding:84px 0}
+  .contact h2{font-size:clamp(28px,4vw,42px)}
+  .contact p{color:var(--mut);max-width:620px;margin:14px auto 0;font-size:17px}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut2);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a:hover{color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav">
+  <div class="brand">CHAR<b>BYTE</b></div>
+  <div class="navlinks">
+    <a href="#thesis">Thesis</a>
+    <a href="#markets">Three markets</a>
+    <a href="#proof">Proof</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">One engine · three markets</div>
+  <h1>Not a tool.<br>An <span class="grad">orthogonal axis</span><br>to the AI economy.</h1>
+  <p class="lede">The industry is betting a trillion dollars that capability comes from <em>scale</em> — bigger models, more compute, more datacenters. We have working proof, in the one domain where you can't fake it, that capability comes from <strong style="color:var(--ink)">organization</strong>.</p>
+  <div class="cta">
+    <a class="btn primary" href="#proof">See the proof</a>
+    <a class="btn ghost" href="#thesis">The thesis ↓</a>
+  </div>
+</div></header>
+
+<section id="thesis"><div class="wrap">
+  <div class="kicker reveal">The inversion</div>
+  <h2 class="reveal">Capability is not a scaling problem.</h2>
+  <p class="sub reveal">Every frontier model is a bank of learned computation. How you <em>organize and reuse</em> that computation — not how much of it you buy — is the lever almost no one is pulling.</p>
+  <div class="split">
+    <div class="card them reveal">
+      <div class="tag">The industry's bet</div>
+      <h3>Capability = scale</h3>
+      <p>Train a bigger model. Add more GPUs. Build another datacenter. Spend to move the frontier up — and pay again at the next model.</p>
+    </div>
+    <div class="card us reveal">
+      <div class="tag">Our proof</div>
+      <h3>Capability = organization</h3>
+      <p>Get more from a <strong style="color:#cfd0d8">fixed</strong> substrate by acquiring reusable structure over it. No new parameters. No retraining. The frontier moves sideways.</p>
+    </div>
+  </div>
+  <p class="oneliner reveal">We don't make the model bigger. <span class="grad">We make it do more.</span></p>
+</div></section>
+
+<section id="markets"><div class="wrap">
+  <div class="kicker reveal">One engine, three markets</div>
+  <h2 class="reveal">The same primitive, pointed three ways.</h2>
+  <p class="sub reveal">Find the latent bug. Find the latent malware. Harness the latent computation. It is one engine — so every market sharpens the other two.</p>
+  <div class="markets">
+    <div class="mk reveal">
+      <div class="n">01</div>
+      <h3>Find the bug</h3>
+      <p>Autonomous, execution-proven vulnerability discovery across an entire operating system in a single pass — no fuzzing, no guesswork. The defender finally gets the attacker's asymmetry.</p>
+      <div class="dom">Offense, in service of defense</div>
+    </div>
+    <div class="mk reveal">
+      <div class="n">02</div>
+      <h3>Find the malware</h3>
+      <p>Understand what any obfuscated binary or script actually does — without executing it and without de-obfuscating it. Structure survives obfuscation; appearance does not.</p>
+      <div class="dom">Defense</div>
+    </div>
+    <div class="mk reveal">
+      <div class="n">03</div>
+      <h3>Harness the computation</h3>
+      <p>Unlock latent capability from a frozen model by acquiring reusable interfaces to its own computation. Commodity models doing frontier work — auditable, cheap, on-device.</p>
+      <div class="dom">Capability</div>
+    </div>
+  </div>
+  <p class="engine-note reveal"><b>Offense, defense, and capability share one primitive.</b> That is the moat: every vertical we enter makes the engine stronger in the others, and the only outward-facing artifact reveals none of it.</p>
+</div></section>
+
+<section id="proof"><div class="wrap">
+  <div class="kicker reveal">Where you can't fake it</div>
+  <h2 class="reveal">Proven on live security.</h2>
+  <p class="sub reveal">Security is the one domain where a false claim dies on contact with a real machine. A bug either fires or it doesn't. That is where we proved the engine — not on a benchmark we graded ourselves.</p>
+  <div class="stats">
+    <div class="stat reveal"><div class="big accent">14+</div><div class="lbl">CVEs publicly catalogued and credited — Apple, Microsoft, the browser, the kernel.</div></div>
+    <div class="stat reveal"><div class="big">Top&#8209;ranked</div><div class="lbl">Among Apple's product-security researchers for 2026 — all of it from one method.</div></div>
+    <div class="stat reveal"><div class="big">Proven</div><div class="lbl">Every finding demonstrated by execution. It never answers <em>probably</em>.</div></div>
+  </div>
+  <div class="prooflinks reveal">
+    <a href="/blog/">Public CVE catalog →</a>
+    <a href="https://github.com/calysteon/shaping-gap-benchmark">The Shaping Gap Benchmark — code &amp; paper →</a>
+    <a href="/research/shaping-gap-sustainable-ai/">Read the research →</a>
+  </div>
+</div></section>
+
+<section id="mechanism"><div class="wrap">
+  <div class="kicker reveal">The primitive</div>
+  <h2 class="reveal">A reusable interface over a frozen substrate.</h2>
+  <div class="mech reveal">
+    <p class="lead">Don't run the system's intended program. Recombine its own fixed parts — steered by a small, reusable interface that forecasts which parts to compose — and let a ground-truth oracle that can't be gamed decide what's real.</p>
+    <p>The advantage lives in the acquired interface, not in the model. So the engine is model-agnostic and future-proof: every new frontier release is simply more latent capability to harness, at no retraining cost. The interfaces compound like a codebase — they appreciate as substrates improve, instead of depreciating the moment the next model ships.</p>
+  </div>
+</div></section>
+
+<section id="horizon"><div class="wrap">
+  <div class="kicker reveal">Then what</div>
+  <h2 class="reveal">If capability is organization, the frontier moves sideways — not just up.</h2>
+  <div class="hz">
+    <div class="item reveal"><div class="h">Capability off the datacenter</div><p>Frontier-grade work from commodity and on-device models — decoupling AI's progress from the energy-and-capital arms race.</p></div>
+    <div class="item reveal"><div class="h">Security that is proven, not promised</div><p>Continuous, autonomous, execution-verified defense — every public crash reproduced and confirmed before anyone can weaponize it.</p></div>
+    <div class="item reveal"><div class="h">AI made sound enough to trust</div><p>Agents that cannot falsely declare "all clear" — opening the high-stakes domains that keep AI at arm's length today.</p></div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <h2>Building the primitive beneath<br>offense, defense, and capability.</h2>
+  <p>If you want to go deeper on the engine, the markets, or where it goes from here — the work speaks for itself below.</p>
+  <div class="cta" style="justify-content:center">
+    <a class="btn primary" href="/blog/">The public CVE catalog</a>
+    <a class="btn ghost" href="https://github.com/calysteon/shaping-gap-benchmark">See the code</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;width:100%;gap:10px;flex-wrap:wrap">
+  <span>© 2026 Charbyte</span>
+  <span><a href="/blog/">Research &amp; CVEs</a> · <a href="https://github.com/calysteon">GitHub</a></span>
+</div></footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
