@@ -11,11 +11,11 @@ image:
   alt: "Unlocking the Computation Inside Pretrained Models"
 ---
 
-**With Dr. Paul Attie, we introduce [Shaping Gap Benchmark](https://github.com/calysteon/shaping-gap-benchmark): a system that learns better ways to run pretrained neural components while keeping earlier programs usable.** The pretrained weights remain fixed.
+**Shaping Gap Benchmark improves numerical processing by learning new ways to connect and run components from trained language models. The original weights stay fixed.**
 
-The system acquires an execution change together with a shared interface for existing programs, selects the pair from experience, and validates it on untouched inputs. The component study demonstrates a second retained improvement built on an already improved runtime.
+The method measures how individual components respond and uses those measurements to construct new connections. When a new connection changes the outputs, a learned translation keeps them usable by programs built around the earlier computation. Each proposed construction is tested for both improvement and compatibility before it is retained.
 
-The larger question is whether useful capabilities can keep developing through better organization of computation we already have. That would create another route to improvement using existing pretrained models and hardware.
+In one component-runtime experiment, this process improved a numerical processing score by 33.24% and 49.60% on two untouched input streams, starting from an already improved runtime. All six protected program instances remained usable.
 
 <div class="research-links">
 <a class="research-button" href="https://github.com/calysteon/shaping-gap-benchmark">See the code</a>
