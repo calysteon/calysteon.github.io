@@ -11,7 +11,7 @@ image:
   alt: "Unlocking the Computation Inside Pretrained Models"
 ---
 
-**Shaping Gap Benchmark improves numerical processing by learning new ways to connect and run components from trained language models. The original weights stay fixed.**
+**The Shaping Gap Benchmark improves numerical processing by learning new ways to connect and run components from trained language models. The original weights stay fixed.**
 
 The method measures how individual components respond and uses those measurements to construct new connections. When a new connection changes the outputs, a learned translation keeps them usable by programs built around the earlier computation. Each proposed construction is tested for both improvement and compatibility before it is retained.
 
