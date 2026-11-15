@@ -13,7 +13,7 @@ Shaping Gap Benchmark
 A runtime learns new ways to connect and run existing pretrained neural components,
 then builds on its improvements while keeping earlier programs usable.
 
-[Read the article](/research/shaping-gap-sustainable-ai/) · [See the code](https://github.com/calysteon/shaping-gap-benchmark/tree/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces) · [Read the paper](https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/paper/shaping-gap-benchmark-vi.pdf)
+[Read the article](/research/shaping-gap-sustainable-ai/) · [See the code](https://github.com/calysteon/shaping-gap-benchmark) · [Read the paper](https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/paper/shaping-gap-benchmark-vi.pdf)
 
 ## Security research
 

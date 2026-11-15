@@ -18,7 +18,7 @@ With Dr. Paul Attie, I am developing this through [Shaping Gap Benchmark](https:
 The larger question is whether useful capabilities can keep developing through better organization of computation we already have. That would create another route to improvement using existing pretrained models and hardware.
 
 <div class="research-links">
-<a class="research-button" href="https://github.com/calysteon/shaping-gap-benchmark/tree/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces">See the code</a>
+<a class="research-button" href="https://github.com/calysteon/shaping-gap-benchmark">See the code</a>
 <a class="research-button research-button-secondary" href="https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/paper/shaping-gap-benchmark-vi.pdf">Read the paper</a>
 </div>
 
@@ -96,7 +96,7 @@ A smaller substrate with better acquired execution could also be compared with a
 The sustainability objective is **lower lifetime energy and cost per retained useful capability**. Reusing pretraining and installed hardware could reduce the pressure to expand models and data-centre capacity as requirements grow. Electrical energy and customer savings have not yet been measured; discovery, failed trials, validation, execution, storage and maintenance all belong in that comparison.
 
 <div class="research-links">
-<a class="research-button" href="https://github.com/calysteon/shaping-gap-benchmark/tree/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces">See the code</a>
+<a class="research-button" href="https://github.com/calysteon/shaping-gap-benchmark">See the code</a>
 <a class="research-button research-button-secondary" href="https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/paper/shaping-gap-benchmark-vi.pdf">Read the paper</a>
 </div>
 
