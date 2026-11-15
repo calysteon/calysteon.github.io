@@ -73,7 +73,7 @@
 
     <p>The method acquires a small, reusable description of how a model's components behave, and uses that description to run the components in new arrangements that meet a new requirement. No new parameters. No retraining. The weights stay fixed. The model does more because its computation is organized better, not because there is more of it.</p>
 
-    <p>I tested this in security because security cannot be self-graded. Driving commodity models with the method, not frontier models, produced <strong>67 or more publicly credited CVEs</strong> across Apple, Microsoft, and Google, spanning kernel memory corruption, browser information disclosure, and privilege escalation, along with a <strong>number two global ranking in Apple's 2026 product-security research</strong>. Every one of those findings was confirmed by execution, not asserted.</p>
+    <p>I tested this in security because security cannot be self-graded. Driving commodity models with the method, not frontier models, produced <strong>67 publicly credited CVEs</strong> across Apple, Microsoft, and Google, spanning kernel memory corruption, browser information disclosure, and privilege escalation, and <strong>ranked me second in the world</strong> in Apple's 2026 product-security research. Every one of those findings was confirmed by execution, not asserted.</p>
 
     <p>The same capability extends past finding flaws. One form of it, which I call <strong>neural sandboxing</strong>, runs an unknown file through a neural network that emulates its behavior and reads the network's internal activity to recover what the file does, without ever running it. Another form adds capability to a frozen model: in a <a href="/research/shaping-gap-sustainable-ai/">public benchmark</a>, it improved a frozen 0.6-billion-parameter model by 33 and 49 percent on two held-out tasks, with the weights unchanged and every existing program still working, reproducible from released code.</p>
 
@@ -93,7 +93,7 @@
 
     <p>A method that can find and prove real flaws across a whole system, cheaply and continuously, starts to turn that advantage over. A system could be audited the way a compiler checks a program: in full, on every change, each finding proven rather than guessed. Public crash reports could be reproduced automatically and confirmed as real before anyone turns them into a weapon. The flood of fake reports could be filtered by the only test that matters, which is whether the bug actually fires.</p>
 
-    <p>I am one person, driving ordinary models, and the method found dozens of confirmed flaws in the most scrutinized software in the world. The honest version of the upside is just that, continuous and everywhere: the same engine standing inside every vendor and every codebase that matters. The caveat is that better tools reach attackers too. But proof favors whoever owns the code and can fix it, and that is the defender.</p>
+    <p>I am one person, driving ordinary models, and those 67 findings are in the most scrutinized software in the world. The honest version of the upside is just that, continuous and everywhere: the same engine standing inside every vendor and every codebase that matters. The caveat is that better tools reach attackers too. But proof favors whoever owns the code and can fix it, and that is the defender.</p>
 
     <h2>Capability comes off the data center</h2>
 
@@ -101,7 +101,7 @@
 
     <p>There is also a quieter cost. Today a model is trained, used, and then discarded when a newer one arrives, and the price of the next capability is another training run from scratch. Adding capability by organization changes that. If new ability can be grown by reorganizing weights that already exist, an existing model stops being something you replace and becomes raw material. Even an outdated model is a substrate you build the next capability on top of, rather than throw away.</p>
 
-    <p>So capability can come from commodity hardware, and from models small enough to run on a device in your hand, for work that used to require the frontier. The benchmark result is small and early, but it is the shape of the thing: more capability from the same weights, at no additional training cost. The aim, in the end, is <strong>lower lifetime energy and cost for each unit of useful capability</strong>, which would ease the pressure to keep expanding models and data centers as demand grows. This does not replace large models. It adds a second, far cheaper lever beside them.</p>
+    <p>So capability can come from commodity hardware, and from models small enough to run on a device in your hand, for work that used to require the frontier. The benchmark is an early result, but it is the shape of the thing: more capability from the same weights, at no additional training cost. The aim, in the end, is <strong>lower lifetime energy and cost for each unit of useful capability</strong>, which would ease the pressure to keep expanding models and data centers as demand grows. This does not replace large models. It adds a second, far cheaper lever beside them.</p>
 
     <h2>AI that can be trusted where it cannot be today</h2>
 
@@ -113,7 +113,7 @@
 
     <p>There is one more consequence, and it is the most speculative, so treat it as the furthest reach. Because the advantage lives in the acquired description rather than in the weights, it is portable and model-agnostic. It does not expire when the next model ships; a better model simply becomes a better substrate for the same description. And the descriptions accumulate. They carry forward and improve as open models improve.</p>
 
-    <p>That makes capability behave less like a private asset that depreciates and more like a public library that compounds. Advanced ability would not stay locked behind the few organizations that can afford the largest models. It would reach anyone with a commodity model and the right reusable structure over it. I have taken this only a short distance, and it is the part most likely to be wrong, but it is also the part I would most want to be right.</p>
+    <p>That makes capability behave less like a private asset that depreciates and more like a public library that compounds. Advanced ability would not stay locked behind the few organizations that can afford the largest models. It would reach anyone with a commodity model and the right reusable structure over it. I have taken this a short distance so far, and it is the part most likely to be wrong, but it is also the part I would most want to be right.</p>
 
     <h2>What this asks of whoever builds it</h2>
 
