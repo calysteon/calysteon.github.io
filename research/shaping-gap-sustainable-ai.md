@@ -11,9 +11,9 @@ image:
   alt: "Unlocking the Computation Inside Pretrained Models"
 ---
 
-**We built a system that learns better ways to run existing pretrained neural components while keeping earlier programs usable.** Its improvements come from changing how those components interact, with their original weights held fixed.
+**With Dr. Paul Attie, we introduce [Shaping Gap Benchmark](https://github.com/calysteon/shaping-gap-benchmark): a system that learns better ways to run pretrained neural components while keeping earlier programs usable.** The pretrained weights remain fixed.
 
-With Dr. Paul Attie, I am developing this through [Shaping Gap Benchmark](https://github.com/calysteon/shaping-gap-benchmark). Our experiments now demonstrate a second retained improvement built on an already improved component runtime. The system acquires a new connection and a shared interface for its existing programs, selects the pair from experience, and tests it on untouched inputs.
+The system acquires an execution change together with a shared interface for existing programs, selects the pair from experience, and validates it on untouched inputs. The component study demonstrates a second retained improvement built on an already improved runtime.
 
 The larger question is whether useful capabilities can keep developing through better organization of computation we already have. That would create another route to improvement using existing pretrained models and hardware.
 
@@ -24,15 +24,15 @@ The larger question is whether useful capabilities can keep developing through b
 
 ## Separating pretrained computation from its usual workflow
 
-A language model normally receives text, processes it through a transformer, and predicts tokens. Pretraining also leaves behind numerical functions inside its neural components. We investigate whether those functions can participate in a different execution system.
+A language model normally receives text, processes it through a transformer, and predicts tokens. Pretraining also leaves behind numerical functions inside its neural components. The method uses those functions in a different execution system.
 
 Our [initial whole-model experiment](https://github.com/calysteon/shaping-gap-benchmark/tree/61fd80fbe76b83a87d465c5dea046fca65637834/checkpoints/04-experience-acquired-reuse) drove the complete frozen transformer body with continuous numerical state and returned its neural response as the next recurrent state. All 28 transformer blocks still executed. Two contexts improved a numerical processing score by approximately 4–5% on both fresh streams while retaining all their eligible old programs. Across the full twelve-context cohort, 140 of 141 old program instances remained usable.
 
-We then brought that learning-and-reuse cycle into a [component runtime](https://github.com/calysteon/shaping-gap-benchmark/tree/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle). It connects 24 selected pretrained neural fragments per context and executes their numerical functions directly, outside the original transformer graph. It uses no attention, tokenization or language-generation head in that execution path.
+The [component runtime](https://github.com/calysteon/shaping-gap-benchmark/tree/04870c5ff60838dde856e03687524721910cda5c/checkpoints/05-component-learning-cycle) connects 24 selected pretrained neural fragments per context and executes their numerical functions directly, outside the original transformer graph. It uses no attention, tokenization or language-generation head in that execution path.
 
 The runtime acquires descriptions of how components respond to inputs and partial derivatives. These response interfaces help anticipate how one component's output will condition the next component's response. The actual pretrained functions execute the computation, and experience determines which changes to retain.
 
-This builds on research in [frozen transformer reuse](https://arxiv.org/abs/2103.05247), [learned execution morphology](https://arxiv.org/abs/2610.38382) and [backward-compatible representations](https://arxiv.org/abs/2206.03040). Our studied object is the acquired execution together with the interface that keeps existing programs usable as that execution changes.
+This builds on research in [frozen transformer reuse](https://arxiv.org/abs/2103.05247), [learned execution morphology](https://arxiv.org/abs/2610.38382) and [backward-compatible representations](https://arxiv.org/abs/2206.03040). The contribution is the acquired execution together with the interface that keeps existing programs usable as that execution changes.
 
 ## Improving without breaking earlier work
 
@@ -40,7 +40,7 @@ Changing a runtime can improve its processing while changing the observations it
 
 The first component-level cycle retained one improvement in six pretrained contexts under integrated guidance, with both eligible old programs preserved in the successful context. Across that cohort, the accepted update and five baseline fallbacks retained 18 of 18 old program instances. First-order, shuffled-conditioning and matched random-weight controls also produced successes; the complete comparisons remain in the linked component study.
 
-To build on the accepted improvement, we acquire the shared interface against **program contracts**: the numerical functions that unchanged readout programs must continue to compute. Source targets train one shared observation map, with feature anchors and regularization. Earlier program weights stay fixed.
+The runtime acquires the shared interface against **program contracts**: the numerical functions that unchanged readout programs must continue to compute. Source targets train one shared observation map, with feature anchors and regularization. Earlier program weights stay fixed.
 
 Feedback selects the execution/interface pair. New inputs then determine whether to commit it or roll back. After all acquisition rounds, two untouched terminal streams assess the retained runtime. The reliability and quality requirements for earlier programs remain in force throughout.
 
@@ -65,7 +65,7 @@ The score measures how well linear readouts recover nonlinear relationships acro
 
 Both successful arms accept one additional neural acquisition during five rounds. This establishes a two-improvement chain: the original component gain followed by a second retained gain. The stronger criterion of two further acquisitions is not met.
 
-The successful construction retains one additional native port and **one 600-value compatibility map**. Interfaces compose into that same map shape. Conservatively counted runtime/program arrays occupy 1,102,272 bytes under the supplied 8 MiB payload cap. The four-port recruitment cap is not yet full, so replacement within a full active bank remains a further experiment.
+The successful construction retains one additional native port and **one 600-value compatibility map**. Interfaces compose into that same map shape. Conservatively counted runtime/program arrays occupy 1,102,272 bytes under the supplied 8 MiB payload cap. This construction uses one of four available recruitment slots. Replacement within a full active bank is outside the scope of this experiment.
 
 ## Recruitment, verification and cost
 
@@ -83,17 +83,17 @@ We froze the acquired controllers and fitted forecast readouts on a public chron
 
 One-hour test RMSE fell from **83.1373 to 82.6682 Wh**, a **0.564% reduction**, with a paired daily-block interval of 0.101–1.175%. Ten-minute error rose 2.220%, and four-hour change was very small. A 64-lag ridge autoregression reference performed better at all three horizons.
 
-The application acceptance criterion was not met. The result defines concrete requirements for the next acquisition: improve the longer-horizon forecast while protecting the short-horizon consumer and competing with the classical reference. Complete predictions, preprocessing, controls and public dataset attribution are included with the code.
+The application acceptance criterion was not met. The result identifies concrete application requirements: improve the longer-horizon forecast while protecting the short-horizon consumer and competing with the classical reference. Complete predictions, preprocessing, controls and public dataset attribution are included with the code.
 
 ## Future work
 
-The next step is application-directed acquisition: let those forecast requirements guide which component and interface to acquire, then evaluate the retained pair on fresh data. Repeated successful acquisitions beyond the second gain, and replacement within a full active bank, will test whether this process can sustain useful development.
+Application-directed acquisition can use those forecast requirements to guide component and interface selection, with the retained pair evaluated on fresh data. Further studies can assess repeated acquisition and replacement within a full active bank.
 
 The potential commercial value is an upgrade process that develops new capability over an installed pretrained core while keeping existing consumers usable. That could reduce the integration and retraining work needed to adopt an improvement. Demonstrating that value requires competitive application quality and a lifecycle comparison against replacement and adaptation alternatives, including acquisition cost, latency, peak memory and maintenance.
 
 A smaller substrate with better acquired execution could also be compared with a larger model on matched tasks and quality requirements. That experiment would separate model size from execution quality while charging the resources used on both sides.
 
-The sustainability objective is **lower lifetime energy and cost per retained useful capability**. Reusing pretraining and installed hardware could reduce the pressure to expand models and data-centre capacity as requirements grow. Electrical energy and customer savings have not yet been measured; discovery, failed trials, validation, execution, storage and maintenance all belong in that comparison.
+The sustainability objective is **lower lifetime energy and cost per retained useful capability**. Reusing pretraining and installed hardware could reduce the pressure to expand models and data-centre capacity as requirements grow. Electrical energy and customer savings require separate evaluation, including discovery, failed trials, validation, execution, storage and maintenance.
 
 <div class="research-links">
 <a class="research-button" href="https://github.com/calysteon/shaping-gap-benchmark">See the code</a>
