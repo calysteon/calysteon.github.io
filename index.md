@@ -8,13 +8,12 @@ layout: default
 
 ### [Unlocking the Computation Inside Pretrained Models](/research/shaping-gap-sustainable-ai/)
 
-**November 13, 2026** · Shaping Gap Benchmark
+Shaping Gap Benchmark
 
-**Updated: Checkpoint 06.** A second compatible neural improvement builds on the
-first over frozen pretrained components. Explore the complete controls, real
-forecast test, paper, code and dated article change log.
+A runtime learns new ways to connect and run existing pretrained neural components,
+then builds on its improvements while keeping earlier programs usable.
 
-[Read the article](/research/shaping-gap-sustainable-ai/) · [Paper and code](https://github.com/calysteon/shaping-gap-benchmark/tree/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces)
+[Read the article](/research/shaping-gap-sustainable-ai/) · [See the code](https://github.com/calysteon/shaping-gap-benchmark/tree/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces) · [Read the paper](https://github.com/calysteon/shaping-gap-benchmark/blob/734af7274a691fdffc3fe4ffe41c2b433d352f52/checkpoints/06-cumulative-contract-interfaces/paper/shaping-gap-benchmark-vi.pdf)
 
 ## Security research
 
